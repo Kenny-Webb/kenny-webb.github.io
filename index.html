@@ -373,20 +373,22 @@ title: GIS Portfolio
 
         <a class="project-card" href="#project-three">
           <img
-            src="{{ '/assets/images/BlackImage3.png' | relative_url }}"
+            src="{{ '/assets/images/P3_FloodModel_Thumbnail.png' | relative_url }}"
             alt="Describe the map shown for Project Three">
 
           <div class="project-card-content">
-            <h3>Project Three</h3>
+            <h3>River Almond 2D Flood Modelling (High Flow Simulation)</h3>
 
             <p>
-              A concise description of the project's purpose and main outcome.
+              A 2D reconstruction of high river flows along the River Almond in Livingston using HEC-RAS, LiDAR terrain, 
+              landcover derived surface roughness and observed discharge data. 
+              
             </p>
 
             <div class="project-tags">
-              <span>Mapping</span>
-              <span>Spatial research</span>
-              <span>GIS</span>
+              <span>HEC-RAS</span>
+              <span>Hydraulic Modelling</span>
+              <span>ArcGIS Pro</span>
             </div>
           </div>
         </a>
@@ -522,41 +524,74 @@ title: GIS Portfolio
     </section>
 
     <section class="project-detail" id="project-three">
-      <h2>Project Three</h2>
+      <h2>River Almond 2D Flood Modelling (High Flow Simulation)</h2>
 
       <div class="project-tags">
-        <span>Mapping</span>
-        <span>Spatial research</span>
-        <span>GIS</span>
+        <span>HEC-RAS</span>
+        <span>Hydaulic Modelling</span>
+        <span>ArcGIS Pro</span>
       </div>
 
       <p>
-        Explain the question, problem or geographic area investigated in
-        this project.
+        This project simulated high-flow conditions along the River Almond in Livingston using observed discharge, a LiDAR 
+        terrain model, and surface roughness from a landcover map produced from Sentinel-2 imagery using Random Forest classification.
+        The finished model was compared with SEPA’s published flood mapping at a 200-year recurrence interval to assess the difference
+        between models. 
+
+        
       </p>
 
       <p class="tools-line">
         <strong>Tools and techniques:</strong>
-        GIS mapping, spatial research and geographic data management.
+        HEC-RAS 2D Modelling, Random-Forest image classification, Spatial data cleaning and management, Python visualisation, ArcGIS raster analysis and spatial analysis, cartographic design 
       </p>
 
       <img
-        src="{{ '/assets/images/BlackImage3.png' | relative_url }}"
+        src="{{ '/assets/images/P3_FloodModel_MainMap.png' | relative_url }}"
         alt="Describe the final map and the geographic information it displays">
 
       <h3>Data and methods</h3>
 
       <p>
-        Explain the datasets, GIS software and analytical methods used.
-        Describe how the final result was produced.
+        A Sentinel-2 multispectral image was classified using the ArcGIS Pro Random Forest classifier to produce a landcover map containing four
+        classes: water, urban, forest and fields. Manning’s roughness coefficients were assigned to each class and incorporated into a 2D HEC-RAS model. 
       </p>
+      <p>
+        The model terrain was derived from a LiDAR DTM. Breaklines were added to the banks and floodplains. The simulation was run using observed 15-minuite 
+        discharge measurements from the nearby Almondell gauging station. 
+      </p>
+      
+      <img
+        src="{{ '/assets/images/P3_FloodModel_Landcover.png' | relative_url }}"
+        alt="Describe the final map and the geographic information it displays">
 
+
+      <img
+        src="{{ '/assets/images/P3_FloodModel_Comparison.png' | relative_url }}"
+        alt="Describe the final map and the geographic information it displays">
+
+      <img
+        src="{{ '/assets/images/P3_FloodModel_Hydrograph.png' | relative_url }}"
+        alt="Describe the final map and the geographic information it displays">
+      
+      
       <h3>Results</h3>
 
       <p>
-        Explain the main findings, important spatial patterns and what
-        the map demonstrates.
+        The simulation predicted flooding at several locations along the strip. Comparison with SEPA’s published 200-year flood mapping
+        showed limited agreement, with the model predicting extensive floods across areas which are not identified to be at any risk by
+        SEPA. No flooding was reported during this time in October 2020. 
       </p>
+
+      <p>
+        This suggests the model is overestimating inundation. This could be due to the absence of river depth in the LiDAR terrain model
+        or errors in the surface roughness parameters.
+      </p>
+
+      <p>
+        *Data Credits:* Scottish Environment Protection Agency (SEPA) discharge observations and flood mapping; Copernicus Sentinel-2 imagery; Scottish Remote Sensing Portal LiDAR Digital Terrain Model. Data reused under respective licensing terms.
+      </p>
+        
 
       <p class="return-link">
         <a href="#projects-heading">Return to projects</a>
